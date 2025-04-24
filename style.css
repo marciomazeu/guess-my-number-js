@@ -1,4 +1,87 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
 body {
   font-family: "Jersey 10", sans-serif;
+  color: white;
+  background-color: black;
+  letter-spacing: 3px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  header {
+    margin: 0 auto;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+  }
+  .title {
+    margin: 0 auto;
+  }
+  header button {
+    width: 100px;
+    padding: 4px;
+  }
+  .hideNumber {
+    position: relative;
+    font: 24px bold;
+    margin: 16px auto;
+    color: black;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: -33px;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 56px;
+  }
+  .userNumber {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    /* border: 1px solid white; */
+  }
+  .userNumber input {
+    width: 100px;
+    height: 50px;
+    margin: 8px auto;
+  }
+  .userNumber button {
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  .scorePainel {
+    width: 48%;
+    /* border: 1px solid white; */
+    text-align: start;
+    padding-left: 24px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  ...;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  ...;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  ...;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  ...;
 }
