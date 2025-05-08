@@ -3,6 +3,7 @@
 let hideNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".check").addEventListener("click", function () {
   const number = Number(document.querySelector(".number").value);
@@ -17,6 +18,10 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".hideNumber").style.width = "7rem";
     document.querySelector(".hideNumber").textContent = hideNumber;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   } else if (number > hideNumber) {
     if (score > 0) {
       document.querySelector(".message").textContent = "⬆️ Too high!";
