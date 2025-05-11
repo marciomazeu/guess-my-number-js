@@ -5,14 +5,18 @@ let hideNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
+
 document.querySelector(".check").addEventListener("click", function () {
   const number = Number(document.querySelector(".number").value);
   console.log(number);
 
   if (!number) {
-    document.querySelector(".message").textContent = "⛔No number!";
+    displayMessage("⛔No number!");
   } else if (number == hideNumber) {
-    document.querySelector(".message").textContent = "🎉 Correct number!";
+    displayMessage("🎉 Correct number!");
     score++;
     document.querySelector(".score").textContent = score;
     document.querySelector("body").style.backgroundColor = "#60b347";
@@ -22,21 +26,14 @@ document.querySelector(".check").addEventListener("click", function () {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
     }
-  } else if (number > hideNumber) {
-    if (score > 0) {
-      document.querySelector(".message").textContent = "⬆️ Too high!";
+  } else if (number !== hideNumber) {
+    if (score > 1) {
+      displayMessage(number > hideNumber ? "⬆️ Too high!" : "⬇️ Too low!");
       score--;
       document.querySelector(".score").textContent = score;
     } else {
-      document.querySelector(".message").textContent = "💥 You lost the game!";
-    }
-  } else if (number < hideNumber) {
-    if (score > 0) {
-      document.querySelector(".message").textContent = "⬇️ Too low!";
-      score--;
+      displayMessage("💥 You lost the game!");
       document.querySelector(".score").textContent = score;
-    } else {
-      document.querySelector(".message").textContent = "💥 You lost the game!";
     }
   }
 });
@@ -44,10 +41,10 @@ document.querySelector(".check").addEventListener("click", function () {
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   hideNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector(".message").textContent = "Start guessing...";
+  displayMessage("Start guessing...");
   document.querySelector(".score").textContent = score;
   document.querySelector(".hideNumber").textContent = "?";
   document.querySelector(".number").value = "";
   document.querySelector("body").style.backgroundColor = "#222";
-  document.querySelector(".hideNumber").style.width = "8px";
+  document.querySelector(".hideNumber").style.width = "80px";
 });
