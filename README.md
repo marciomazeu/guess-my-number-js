@@ -12,10 +12,10 @@ The user can play this game again (by clicking on 'Again!' button). If the user 
 
 If the user can't guess the right number in 20 attempts, then he will lose and the window will turn red.
 
-![App Screenshot](./assets/exemple-1.png)
-![App Screenshot](./assets/exemple-2.png)
+![App Screenshot](/assets/exemple-1.png)
+![App Screenshot](/assets/exemple-2.png)
 
 
 This project is hosted live on github pages, which you can checkout and play this game by following link:
 
-[guessmynumber.faisalansari.me](https://marciomazeu.github.io/guess-my-number-js/)
+[https://marciomazeu.github.io/guess-my-number-js/](https://marciomazeu.github.io/guess-my-number-js/)
